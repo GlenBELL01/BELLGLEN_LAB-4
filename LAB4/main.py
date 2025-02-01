@@ -55,6 +55,11 @@ def validate_api_key(api_key: str = Depends(api_key_header)):
         raise HTTPException(status_code=401, detail="Unauthorized")
     logger.info("API key validation successful.")
 
+app = FastAPI()
+@app.get("/")
+def read_root():
+return {"message": "Hello, Render!"}
+
 # Version 1 Endpoints
 @app.get("/v1/tasks/{task_id}")
 def read_task_v1(task_id: int):
