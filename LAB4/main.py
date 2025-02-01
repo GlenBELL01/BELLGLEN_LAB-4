@@ -58,7 +58,7 @@ def validate_api_key(api_key: str = Depends(api_key_header)):
 app = FastAPI()
 @app.get("/")
 def read_root():
-return {"message": "Hello, Render!"}
+    return {"message": "Hello, Render!"}
 
 # Version 1 Endpoints
 @app.get("/v1/tasks/{task_id}")
